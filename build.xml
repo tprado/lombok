@@ -573,6 +573,7 @@ ${sourceWarning}</echo>
 		</ivy:compile>
 		<mkdir dir="build/teststubs" />
 		<ivy:compile destdir="build/teststubs" source="1.6" target="1.6" ecj="true" nowarn="true">
+			<bootclasspath path="${rt-openjdk8}" />
 			<src path="test/stubs" />
 		</ivy:compile>
 	</target>
@@ -589,7 +590,7 @@ ${sourceWarning}</echo>
 			<arg value="-target" />
 			<arg value="1.6" />
 			<arg value="-cp" />
-			<arg value="dist/lombok.jar" />
+			<arg value="${rt-openjdk8}:dist/lombok.jar" />
 			<arg value="test/ecj/SimpleTest.java" />
 		</java>
 	</target>
